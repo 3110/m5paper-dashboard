@@ -62,8 +62,6 @@ bool RTC::setRTC(const char *tz, const char *ntpServer,
     const bool succeeded = getLocalTime(&info);
     if (succeeded)
     {
-        static rtc_date_t d;
-        static rtc_time_t t;
         setRTCDate(info);
         setRTCTime(info);
         SERIAL_PRINTF("Succeeded to setRTC(%s, %s): %s",
